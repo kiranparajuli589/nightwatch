@@ -1,0 +1,6 @@
+.idea
+.vscode
+node_modules
+logs
+_selenium-server.log
+
