@@ -1,5 +1,6 @@
 const chromeDriver = require("chromedriver")
-const BROWSER_NAME = process.env.BROWSER_NAME || "chrome"
+const geckoDriver = require("geckodriver")
+const BROWSER_NAME = process.env.BROWSER_NAME
 const SCREENSHOTS = process.env.SCREENSHOTS === "true"
 const SCREENSHOTS_PATH = process.env.SCREENSHOTS_PATH || 'tests/screenshots'
 
@@ -26,7 +27,7 @@ module.exports = {
       globals: {},
 
       desiredCapabilities: {
-        browserName: BROWSER_NAME,
+        browserName: BROWSER_NAME  || "chrome",
         javascriptEnabled: true,
         acceptSslCerts: true,
         chromeOptions: {
@@ -41,11 +42,8 @@ module.exports = {
         port: 4444,
         cli_args: {
           'webdriver.chrome.driver': chromeDriver.path,
+          'webdriver.firefox.driver': geckoDriver.path
         }
-      },
-
-      webdriver: {
-        start_process: false
       },
 
       screenshots : {
@@ -54,5 +52,10 @@ module.exports = {
         path : SCREENSHOTS_PATH
       }
     },
+    firefox: {
+      desiredCapabilities: {
+        browserName: 'firefox'
+      }
+    }
   },
 }

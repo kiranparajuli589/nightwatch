@@ -14,7 +14,7 @@ When(/^user searches for "([^"]*)"$/, function (keyword) {
   return browser
     .waitForElementVisible(selectors.searchInput)
     .clearValue(selectors.searchInput)
-    .updateValue(selectors.searchInput, [keyword, browser.Keys.ENTER])
+    .setValue(selectors.searchInput, [keyword, browser.Keys.ENTER])
 })
 
 Then(/^search results for NightwatchJS should be listed$/, function () {
