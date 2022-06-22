@@ -1,4 +1,7 @@
 const chromeDriver = require("chromedriver")
+const BROWSER_NAME = process.env.BROWSER_NAME || "chrome"
+const SCREENSHOTS = process.env.SCREENSHOTS === "true"
+const SCREENSHOTS_PATH = process.env.SCREENSHOTS_PATH || 'tests/screenshots'
 
 module.exports = {
   src_folders: [
@@ -15,11 +18,14 @@ module.exports = {
 
   test_settings: {
     default: {
-      launch_url: 'https://google.com',
+      launch_url: 'https://google.com.np',
+
       selenium_host: 'localhost',
+
       globals: {},
+
       desiredCapabilities: {
-        browserName: "chrome",
+        browserName: BROWSER_NAME,
         javascriptEnabled: true,
         acceptSslCerts: true,
         chromeOptions: {
@@ -28,6 +34,7 @@ module.exports = {
         },
         loggingPrefs: { browser: 'ALL' }
       },
+
       selenium: {
         start_process: false,
         port: 4444,
@@ -35,9 +42,16 @@ module.exports = {
           'webdriver.chrome.driver': chromeDriver.path,
         }
       },
+
       webdriver: {
         start_process: false
+      },
+
+      screenshots : {
+        enabled : SCREENSHOTS,
+        on_failure : true,
+        path : SCREENSHOTS_PATH
       }
     },
-  }
+  },
 }

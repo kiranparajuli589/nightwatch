@@ -6,11 +6,11 @@ Feature: Google Search
   Background:
     Given user has browsed to the homepage
 
-  Scenario: resonable search
+  Scenario: reasonable search
     When user searches for "Nightwatch"
     Then search results for NightwatchJS should be listed
 
-  Scenario: very unresonable search
+  Scenario: very un-reasonable search
     When user searches for "lllllllllllsssssllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
     Then user should see no results found message
       """
