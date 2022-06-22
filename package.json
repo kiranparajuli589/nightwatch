@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "test": "nightwatch --require ./_extra_setup.js --env selenium.chrome"
+    "test": "nightwatch"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^8.3.0",
-    "chromedriver": "^93.0.1",
+    "chromedriver": "^102.0.0",
     "nightwatch": "^2.2.1"
   }
 }

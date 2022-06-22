@@ -15,10 +15,18 @@ module.exports = {
 
   test_settings: {
     default: {
-      launch_url: 'https://nightwatchjs.org',
+      launch_url: 'https://google.com',
+      selenium_host: 'localhost',
       globals: {},
       desiredCapabilities: {
-        browserName: "chrome"
+        browserName: "chrome",
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        chromeOptions: {
+          args: ['disable-gpu', 'ignore-certificate-errors'],
+          w3c: false
+        },
+        loggingPrefs: { browser: 'ALL' }
       },
       selenium: {
         start_process: false,
