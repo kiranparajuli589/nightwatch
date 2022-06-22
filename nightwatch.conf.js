@@ -12,7 +12,8 @@ module.exports = {
     type: 'cucumber',
     options: {
       feature_path: 'tests/features/**/*.feature',
-      auto_start_session: true
+      // start the webdriver session automatically (enabled by default)
+      auto_start_session: false
     }
   },
 
