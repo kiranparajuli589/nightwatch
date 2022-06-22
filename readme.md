@@ -43,3 +43,6 @@ Unlike Nightwatch v1, api client is not required from v2. Also, it now provides 
     }
     ```
 ## Run tests
+```shell
+npm run test
+```
